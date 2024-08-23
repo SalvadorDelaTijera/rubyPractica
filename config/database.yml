@@ -1,0 +1,28 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+#
+
+       default: &default
+         adapter: postgresql
+         encoding: unicode
+         pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+       
+       development:
+         <<: *default
+         database: my_api_development
+         username: my_api
+         password: tijera
+         host: localhost
+       
+       test:
+         <<: *default
+         database: my_api_test
+         username: my_api
+         password: tijera
+         host: localhost
+       
+       production:
+         <<: *default
+         database: my_api_production
+         username: my_api
+         password: tijera
+         host: localhost
